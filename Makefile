@@ -23,8 +23,8 @@ build: dep check test
 	GOARCH=amd64 GOOS=linux go build -o ${BINARY_NAME}-amd64-linux ${MAIN_GO}
 	GOARCH=amd64 GOOS=windows go build -o ${BINARY_NAME}-amd64-windows ${MAIN_GO}
 
-run:
-	./${BINARY_NAME}-linux
+run: build
+	./${BINARY_NAME}-amd64-linux
 
 clean:
 	go clean
